@@ -1,0 +1,87 @@
+#background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    filter: brightness(1);
+    z-index: -2;
+}
+
+.leftContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 16em;
+}
+.logoContainer {
+    margin: 0.7em 0 0.7em 2.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 8.8em;
+    text-decoration: none;
+
+}
+
+.logoImageContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 0.5em;
+}
+.logoImage {
+    width: 3.2em;
+}
+
+.logo{
+    color: rgb(19, 25, 41);
+    text-transform: uppercase;
+    font-size: 1.4em;
+    width: 5em;
+    letter-spacing: 0.2em;
+    font-family: Satoshi
+}
+
+
+.rightContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rightSideStuff{
+    position: static;
+    color: rgb(19, 25, 41);
+    width: 27em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5vw;
+}
+
+.FooterAuthor{
+    color: #f5f5fa; 
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    font-family: Satoshi;
+}
+
+.FooterBg{
+    background: rgb(19, 25, 41);
+    padding: 1.25em 0;
+    box-shadow: 0 0 1em rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}  
+
+@font-face {
+    font-family: "Satoshi";
+    src: url(resources/Satoshi-Variable.ttf);
+
+}
