@@ -1,3 +1,28 @@
+body {
+    margin: 0;
+    
+}
+
+nav{
+    width: 100vw;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+a{
+    color: rgb(19, 25, 41);
+    text-transform: capitalize;
+}
+
+
+
 #background{
     position: fixed;
     width: 100%;
@@ -9,28 +34,47 @@
     z-index: -2;
 }
 
-.leftContainer{
+.headerContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#f5f5fa;
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    
+}
+
+
+
+.menu{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 16em;
+    width: 100%;
+    
 }
 .logoContainer {
     margin: 0.7em 0 0.7em 2.5vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    width: 8.8em;
+    width: 4em;
     text-decoration: none;
-
+    
 }
 
 .logoImageContainer{
     display: flex;
     align-items: center;
     margin-right: 0.5em;
+    
+    
 }
 .logoImage {
     width: 3.2em;
@@ -43,32 +87,61 @@
     width: 5em;
     letter-spacing: 0.2em;
     font-family: Satoshi
+    
 }
 
 
 .rightContainer{
+    width:30em;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    
 }
 .rightSideStuff{
     position: static;
     color: rgb(19, 25, 41);
-    width: 27em;
+    width: 50em;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 2.5vw;
+    
+}
+.about,.instagram,.playground{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.1em;
+    text-decoration: none;
+    color:rgb(19, 25, 41);
+    font-family: "Satoshi";
+    position: relative;
+    padding: 0 6px;
+    cursor: pointer;
 }
 
-.FooterAuthor{
-    color: #f5f5fa; 
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 0.5em;
-    font-family: Satoshi;
+.about::after,.instagram::after,.playground::after{
+    content: ' ';
+    font-size: 1.1em;
+    text-decoration: none;
+    color:red;
+    font-family: "Satoshi";
+    position: relative;
+    padding: 0 6px;
+    display: block;
+    transition: .5s ease-in-out;
 }
+.about:hover:after,.instagram:hover:after,.playground:hover:after{
+    content: ' ';
+    font-size: 1.1em;
+    text-decoration: none;
+    color:red;
+    font-family: "Satoshi";
+    position: relative;
+    padding: 0 6px;
+}
+
 
 .FooterBg{
     background: rgb(19, 25, 41);
@@ -79,6 +152,13 @@
     justify-content: center;
     flex-direction: column;
 }  
+.FooterAuthor{
+    color: #f5f5fa; 
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    font-family: Satoshi;
+}
 
 @font-face {
     font-family: "Satoshi";
