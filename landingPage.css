@@ -1,148 +1,168 @@
-body {
-    margin: 0;
-    
-}
+*{
 
-nav{
-    width: 100vw;
-}
-
-ul{
-    list-style-type: none;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
+    font-family: Satoshi;
 }
-a{
-    color: rgb(19, 25, 41);
-    text-transform: capitalize;
+@font-face {
+    font-family: "Satoshi";
+    src: url(resources/Satoshi-Variable.ttf);
+    /*custom font*/
 }
 
-
-
-#background{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    filter: brightness(1);
-    z-index: -2;
-}
-
-.headerContainer{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.navibar{
     background-color:#f5f5fa;
-    text-decoration: none;
-    position: fixed;
-    top: 0;
-    z-index: 9;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top:0;
+    z-index:888;
     
 }
 
-
-
-.menu{
+.navibar_container{
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    height: 70px;
+    z-index: 1;
     width: 100%;
-    
-}
-.logoContainer {
-    margin: 0.7em 0 0.7em 2.5vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    width: 4em;
-    text-decoration: none;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
     
 }
 
-.logoImageContainer{
+#navi_logo{
+    background-color: #f5f5fa ;
+    background-image: linear-gradient(to top,rgb(19, 25, 41),#f5f5fa 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
     display: flex;
     align-items: center;
-    margin-right: 0.5em;
-    
-    
-}
-.logoImage {
-    width: 3.2em;
-}
-
-.logo{
-    color: rgb(19, 25, 41);
-    text-transform: uppercase;
-    font-size: 1.4em;
-    width: 5em;
-    letter-spacing: 0.2em;
-    font-family: Satoshi
-    
-}
-
-
-.rightContainer{
-    width:30em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-}
-.rightSideStuff{
-    position: static;
-    color: rgb(19, 25, 41);
-    width: 50em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 2.5vw;
-    
-}
-.about,.instagram,.playground{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1.1em;
-    text-decoration: none;
-    color:rgb(19, 25, 41);
-    font-family: "Satoshi";
-    position: relative;
-    padding: 0 6px;
     cursor: pointer;
-}
-
-.about::after,.instagram::after,.playground::after{
-    content: ' ';
-    font-size: 1.1em;
+    text-align: none;
+    font-size: 1.5rem;
     text-decoration: none;
-    color:red;
-    font-family: "Satoshi";
-    position: relative;
-    padding: 0 6px;
-    display: block;
-    transition: .5s ease-in-out;
+    
 }
-.about:hover:after,.instagram:hover:after,.playground:hover:after{
-    content: ' ';
-    font-size: 1.1em;
+
+.fa-gem{
+    margin-right: 0.5rem;
+}
+
+.navi_menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+.item{
+    height: 80px;
+}
+
+.links{
+    color: #002C7C;
+    display:flex; 
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color:red;
-    font-family: "Satoshi";
-    position: relative;
-    padding: 0 6px;
+    padding:0 1rem;
+    height: 100%;
 }
 
+.links:hover{
+    color:grey;
+    transition: all 0.3s ease;
+}
 
+@media screen and (max-width:960px){
+    .navibar_container{
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+
+    }
+
+    .navi_menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        
+    }
+
+    .navi_menu.active{
+        background: #292727;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    #navi_logo{
+        padding-left: 25px;
+    }
+
+    .navi_t .line{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease-in-out;
+        background: #292727;
+    }
+
+    .item{
+        width: 100%;
+    }
+
+    .links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        color: #f5f5fa;
+    }
+
+    #mobile_menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%,20%);
+    }
+
+    .navi_t .line{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile_menu.is-active .line:nth-child(2){
+        opacity: 0;
+    }
+    #mobile_menu.is-active .line:nth-child(1){
+        transform: translateY(8px) rotate(45deg); 
+    }
+    #mobile_menu.is-active .line:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg); 
+    }
+}
 .FooterBg{
     background: rgb(19, 25, 41);
     padding: 1.25em 0;
@@ -158,10 +178,4 @@ a{
     font-size: 1.2em;
     margin-top: 0.5em;
     font-family: Satoshi;
-}
-
-@font-face {
-    font-family: "Satoshi";
-    src: url(resources/Satoshi-Variable.ttf);
-
 }
